@@ -59,6 +59,16 @@ Page({
       title: "关于",
       content: "解梦"
     }) : 11 == e && this.previewImage();
+
+    // 统计那种类别的卡片受欢迎，点击次数多.
+    const paraStr = t.currentTarget.id
+    const para = {
+      type: 2.1 + '&' + paraStr // 该用户是点击分享按钮，分享分类主页
+    }
+    save(para) // 统计首页分享数据，存入数据库
+
+
+
   },
   itemLockClick: function(t) {
     var typeId = t.currentTarget.id;
@@ -92,7 +102,7 @@ Page({
     })
 
     // 设置type卡片的禁止标识
-    this.setMark(1)
+    // this.setMark(1)
 
   },
 
@@ -178,7 +188,7 @@ Page({
           wx.setStorageSync('userinfo', baseInfo)
 
           // 设置卡片的加锁状态.
-          that.setMark(1)
+          // that.setMark(1)
 
         }
 
@@ -194,7 +204,7 @@ Page({
     let shareObj = {
       title: "想知道你的梦境预示着什么吗？答案在这里！",
       desc: "想知道你的梦境预示着什么吗？答案在这里！",
-      imageUrl: "../../images/share-outimg.jpeg",
+      imageUrl: "../../images/share-outimg-2.jpeg",
       path: "/pages/index/index",
       success: function () {},
       fail: function () {},
@@ -207,9 +217,9 @@ Page({
 
       shareObj.success = function () {
         // 区分不同card分享还是直接页面右下角分享按钮分享.
-        const paraStr = that.data.shareCardId ? '&' + that.data.shareCardId : ''
+        // const paraStr = that.data.shareCardId ? '&' + that.data.shareCardId : ''
         const para = {
-          type: 2.5 + paraStr // 该用户是点击分享按钮，分享分类主页
+          type: 2.5 // 该用户是点击分享按钮，分享分类主页
         }
         save(para) // 统计首页分享数据，存入数据库
 
@@ -230,7 +240,7 @@ Page({
             })
 
             // 设置卡片的展示标识
-            that.setMark(2)
+            // that.setMark(2)
           }
 
         }

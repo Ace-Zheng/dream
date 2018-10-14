@@ -22,7 +22,7 @@
                   <image src="/images/tab/search-f71.png"></image>
               </navigator>
               <navigator class="look-all abc-img" openType="switchTab" url="../index/index">
-                  <image src="/images/all-type.png"></image>
+                  <image src="/images/tab/dream-f71.png"></image>
               </navigator>
 
           </view>
@@ -32,7 +32,7 @@
                   <image src="/images/tab/search-f71.png"></image>
               </navigator>
               <navigator class="look-all abc-img" openType="switchTab" url="../index/index">
-                  <image src="/images/all-type.png"></image>
+                  <image src="/images/tab/dream-f71.png"></image>
               </navigator>
 
           </view>
@@ -42,11 +42,17 @@
                   <image src="/images/tab/search-f71.png"></image>
               </navigator>
               <navigator class="look-all abc-img" openType="switchTab" url="../index/index">
-                  <image src="/images/all-type.png"></image>
+                  <image src="/images/tab/dream-f71.png"></image>
               </navigator>
 
           </view>
 
         </view>
     </view>
+</view>
+
+<view class="index_share abc-flex-y-center">
+  <button class="abc-img" openType="share">
+      <image class="" src="/images/index-share.png"></image>
+  </button>
 </view>

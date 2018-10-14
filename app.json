@@ -1,5 +1,7 @@
 {
     "pages": [
+        "pages/constellation/index/index",
+
         "pages/home/home",
         "pages/index/index",
         "pages/detail/detail",
@@ -23,9 +25,15 @@
             },
             {
                 "pagePath": "pages/index/index",
-                "text": "分类",
-                "iconPath": "images/tab/type-gray.png",
-                "selectedIconPath": "images/tab/type-f71.png"
+                "text": "解梦",
+                "iconPath": "images/tab/dream-gray.png",
+                "selectedIconPath": "images/tab/dream-f71.png"
+            },
+            {
+                "pagePath": "pages/constellation/index/index",
+                "text": "星座",
+                "iconPath": "images/tab/constellation-gray.png",
+                "selectedIconPath": "images/tab/constellation-f71.png"
             }
         ]
     }

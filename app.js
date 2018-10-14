@@ -1,11 +1,12 @@
 require("./utils/ald-stat.js");
 import { config } from './config'
 import { request, setLoginUrl, extend, constants, login } from './sdk/index'
+import dataList from '/utils/constellation/list'
 
 App({
   data: {
     needShare: ['2','3','4','5','6','7','8','9'], // 初始化加锁的板块
-
+    constellationList: dataList.tabList // 初始化星座分类
   },
 
   // 微信登录方法

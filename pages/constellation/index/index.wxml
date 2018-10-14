@@ -1,0 +1,9 @@
+<view class="fortune_box bg5">
+    <view class="fortune">
+        <navigator class="li" hoverClass="none" mode="widthFix" url="/pages/fortune_info/fortune_info?id={{index+1}}" wx:for="{{list}}" wx:key="index">
+            <image class="li_img" src="{{item.imgUrl}}" style="width:{{item.imgWidth}};height:{{item.imgHeight}}"></image>
+            <view class="name">{{item.name}}</view>
+            <view class="date">{{item.date}}</view>
+        </navigator>
+    </view>
+</view>
