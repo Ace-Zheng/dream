@@ -1,0 +1,17 @@
+
+<button wx:if="{{!userInfo || !userInfo.nickName}}" class="getAuth" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+<view bindtap="backCss" class="page">
+
+    <view catchtap="javascript:;" class="container">
+      <input bindinput="changeSearchKey" placeholder-class="phcolor" value="{{searchKey}}" class="{{searchCss ? 'selected' : ''}}" type="text" placeholder="你梦见了..."></input>
+      <view catchtap="searchClick" class="search {{searchCss ? 'selected' : ''}}"></view>
+
+    </view>
+
+</view>
+
+<view class="index_share abc-flex-y-center">
+  <button class="abc-img" openType="share">
+      <image class="" src="/images/index-share.png"></image>
+  </button>
+</view>

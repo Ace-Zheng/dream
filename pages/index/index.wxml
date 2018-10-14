@@ -1,0 +1,111 @@
+
+<button wx:if="{{!userInfo || !userInfo.nickName}}" class="getAuth" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+<view class="page">
+    <view class="title abc-flex-x-center">
+      <view><view class="line"></view></view>
+      <view class="title-name">分类</view>
+      <view><view class="line"></view></view>
+    </view>
+
+    <view class="content">
+      <view class="type-item abc-flex-x-center">
+        <view><image bindtap="itemClick" id="0" src="https://tpdoc.cn/uploads/dream/ziran.png"></image></view>
+        <view><image bindtap="itemClick" id="1" src="https://tpdoc.cn/uploads/dream/jianzhu.png"></image></view>
+      </view>
+
+      <view class="type-item second abc-flex-x-center">
+        <view class="guishen imagePar abc-img">
+          <image bindtap="itemClick" id="2" src="https://tpdoc.cn/uploads/dream/guishen.png"></image>
+
+          <button wx:if="{{!mark2}}" bindtap="itemLockClick" id="2" class="cover abc-flex-x-center" openType="share">
+            <image class="lock" src="/images/lock.png"></image>
+            <image class="text" src="/images/share-text.png"></image>
+          </button>
+        </view>
+
+        <view class="guishen-par abc-flex-y-between">
+          <view class="imagePar">
+            <image bindtap="itemClick" id="4" src="https://tpdoc.cn/uploads/dream/dongwu.png"></image>
+
+            <button wx:if="{{!mark4}}" bindtap="itemLockClick" id="4" class="cover abc-flex-x-center" openType="share">
+              <image class="lock" src="/images/lock.png"></image>
+              <image class="text" src="/images/share-text.png"></image>
+            </button>
+          </view>
+
+          <view class="imagePar">
+            <image bindtap="itemClick" id="3" src="https://tpdoc.cn/uploads/dream/zhiwu.png"></image>
+
+            <button wx:if="{{!mark3}}" bindtap="itemLockClick" id="3" class="cover abc-flex-x-center" openType="share">
+              <image class="lock" src="/images/lock.png"></image>
+              <image class="text" src="/images/share-text.png"></image>
+            </button>
+          </view>
+        </view>
+      </view>
+
+      <view class="type-item abc-flex-x-center">
+        <view class="imagePar">
+            <image bindtap="itemClick" id="5" src="https://tpdoc.cn/uploads/dream/shenti.png"></image>
+
+            <button wx:if="{{!mark5}}" bindtap="itemLockClick" id="5" class="cover abc-flex-x-center" openType="share">
+              <image class="lock" src="/images/lock.png"></image>
+              <image class="text" src="/images/share-text.png"></image>
+            </button>
+        </view>
+        <view class="imagePar">
+          <image bindtap="itemClick" id="6" src="https://tpdoc.cn/uploads/dream/wupin.png"></image>
+
+          <button wx:if="{{!mark6}}" bindtap="itemLockClick" id="6" class="cover abc-flex-x-center" openType="share">
+            <image class="lock" src="/images/lock.png"></image>
+            <image class="text" src="/images/share-text.png"></image>
+          </button>
+        </view>
+
+      </view>
+
+      <view class="type-item abc-flex-x-center">
+        <view class="qingai-par abc-flex-y-between">
+          <view class="imagePar abc-img">
+            <image bindtap="itemClick" id="8" src="https://tpdoc.cn/uploads/dream/shenghuo.png"></image>
+
+            <button wx:if="{{!mark8}}" bindtap="itemLockClick" id="8" class="cover abc-flex-x-center" openType="share">
+              <image class="lock" src="/images/lock.png"></image>
+              <image class="text" src="/images/share-text.png"></image>
+            </button>
+          </view>
+
+          <view class="imagePar abc-img">
+            <image bindtap="itemClick" id="9" src="https://tpdoc.cn/uploads/dream/renwu.png"></image>
+
+            <button wx:if="{{!mark9}}" bindtap="itemLockClick" id="9" class="cover abc-flex-x-center" openType="share">
+              <image class="lock" src="/images/lock.png"></image>
+              <image class="text" src="/images/share-text.png"></image>
+            </button>
+          </view>
+        </view>
+
+        <view class="qingai imagePar abc-img">
+          <image bindtap="itemClick" id="7" src="https://tpdoc.cn/uploads/dream/qingai.png"></image>
+
+          <button wx:if="{{!mark7}}" bindtap="itemLockClick" id="7"
+            class="cover abc-flex-x-center" openType="share">
+
+            <image class="lock" src="/images/lock.png"></image>
+            <image class="text" src="/images/share-text.png"></image>
+
+          </button>
+
+        </view>
+      </view>
+
+    </view>
+
+</view>
+
+<view class="index_share abc-flex-y-center">
+  <button class="abc-img" openType="share">
+      <image class="" src="/images/index-share.png"></image>
+  </button>
+</view>
+

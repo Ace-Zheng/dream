@@ -1,0 +1,7 @@
+<view style="padding:25rpx;margin-left:25rpx;margin-right:25rpx;">
+    <view wx:for="{{titleData[index]}}" wx:key="*this">
+        <navigator url="../detail/detail?key={{item}}&fromTitleList=true">
+            <view class="li">{{item}}</view>
+        </navigator>
+    </view>
+</view>

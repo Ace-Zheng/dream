@@ -1,0 +1,32 @@
+{
+    "pages": [
+        "pages/home/home",
+        "pages/index/index",
+        "pages/detail/detail",
+        "pages/titlelist/titlelist"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#FFEAC3",
+        "navigationBarTitleText": "解梦运势大全",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#F8BB13",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/home/home",
+                "text": "搜索",
+                "iconPath": "images/tab/search-gray.png",
+                "selectedIconPath": "images/tab/search-f71.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "分类",
+                "iconPath": "images/tab/type-gray.png",
+                "selectedIconPath": "images/tab/type-f71.png"
+            }
+        ]
+    }
+}
