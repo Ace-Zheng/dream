@@ -1,0 +1,39 @@
+<import src="/utils/wxParse/wxParse.wxml"/>
+
+
+<view class="page">
+    <view class="container page-body" hidden="{{isLoading}}">
+        <view class="detail-body" wx:if="{{contentResult.length>0}}">
+            <view class="detail-body-item">
+                <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+            </view>
+        </view>
+        <view class="fail-body" wx:else>
+            <view>
+                <icon color="#e64340" size="80" type="warn"></icon>
+            </view>
+            <view class="detail-body-item">
+                <text>暂无与"{{searchKey}}"相关的星座信息</text>
+            </view>
+        </view>
+
+        <view class="leo-btn abc-flex-x-center">
+          <view class="abc-flex-x-center" hidden="{{fromTitleList}}">
+              <navigator class="search-all abc-img" openType="switchTab" url="../home/home">
+                  <image src="/images/tab/search-f71.png"></image>
+              </navigator>
+              <navigator class="look-all abc-img" openType="switchTab" url="../index/index">
+                  <image src="/images/tab/dream-f71.png"></image>
+              </navigator>
+
+          </view>
+
+        </view>
+    </view>
+</view>
+
+<view class="index_share abc-flex-y-center">
+  <button class="abc-img" openType="share">
+      <image class="" src="/images/index-share.png"></image>
+  </button>
+</view>

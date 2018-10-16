@@ -6,4 +6,21 @@
             <view class="date">{{item.date}}</view>
         </navigator>
     </view>
+
+
+    <navigator class="xingzuo-compute abc-flex-x-between" url="/pages/fortune_info/fortune_info">
+      <view class="title">星座测算</view>
+      <image class="more" src="/images/constellation/index/more.png"></image>
+
+      <image class="new" src="https://tpdoc.cn/uploads/dream/xingzuo/index/new.png"></image>
+    </navigator>
+
+    <navigator class="xingzuo-fenxi xingzuo-fenxi-1 abc-flex-y-end" url="/pages/constellation/fenxiList/fenxiList?type=character">
+      <view class="title">十二星座性格解析</view>
+    </navigator>
+
+    <navigator class="xingzuo-fenxi xingzuo-fenxi-2 abc-flex-y-end" url="/pages/constellation/fenxiList/fenxiList?type=depth">
+      <view class="title">十二星座深度分析</view>
+    </navigator>
+
 </view>

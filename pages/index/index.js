@@ -52,13 +52,13 @@ Page({
   },
   itemClick: function(t) {
     console.log(t.currentTarget.id);
-    var e = t.currentTarget.id;
-    10 != e && 11 != e ? wx.navigateTo({
-      url: "../titlelist/titlelist?index=" + e + "&title=" + this.data.groupData[e]
-    }) : 10 == e ? wx.showModal({
-      title: "关于",
-      content: "解梦"
-    }) : 11 == e && this.previewImage();
+    // var e = t.currentTarget.id;
+    // 10 != e && 11 != e ? wx.navigateTo({
+    //   url: "../titlelist/titlelist?index=" + e + "&title=" + this.data.groupData[e]
+    // }) : 10 == e ? wx.showModal({
+    //   title: "关于",
+    //   content: "解梦"
+    // }) : 11 == e && this.previewImage();
 
     // 统计那种类别的卡片受欢迎，点击次数多.
     const paraStr = t.currentTarget.id

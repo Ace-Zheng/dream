@@ -5,7 +5,12 @@
         "pages/home/home",
         "pages/index/index",
         "pages/detail/detail",
-        "pages/titlelist/titlelist"
+        "pages/titlelist/titlelist",
+        "pages/constellation/fenxiList/fenxiList",
+        "pages/constellation/detail/detail"
+
+
+
     ],
     "window": {
         "backgroundTextStyle": "light",

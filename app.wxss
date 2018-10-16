@@ -10,6 +10,9 @@ page {
     background: #FFEAC3;
     font-size: 25rpx;
 }
+view, image, button, navigator {
+  box-sizing: border-box;
+}
 
 icon {
     vertical-align: middle;
