@@ -67,7 +67,7 @@ body {
   border: 2px solid white;
   transition: all .5s;
 }
-.container input {
+.container .input-par {
   font-family: 'Inconsolata', monospace;
   position: absolute;
   margin: auto;
@@ -82,7 +82,7 @@ body {
   background: crimson;
   color: white;
   text-shadow: 0 0 10px crimson;
-  padding: 0 80px 0 20px;
+  padding: 0 0 0 20px;
   border-radius: 30px;
   box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s;
@@ -91,16 +91,21 @@ body {
   font-weight: bolder;
   letter-spacing: 0.1em;
 }
+.container .input-par input {
+  width: 320rpx;
+  height: 30px;
+  margin-top: 10px;
+}
 .phcolor {
   color: #fff;
 }
 
 
-.container input:hover {
+.container .input-par:hover {
   cursor: pointer;
 }
-.container input.selected {
-  width: 300rpx;
+.container .input-par.selected {
+  width: 450rpx;
   opacity: 1;
   cursor: text;
 }
@@ -109,7 +114,7 @@ body {
 
 
 .container .search.selected {
-  right: -250px;
+  right: -230px;
   background: #B8E986;
   z-index: 6;
 }
@@ -143,11 +148,13 @@ body {
   transition: all .5s;
 }
 
-.container input::placeholder {
+/*
+.container .input-par {
   color: white;
   opacity: 0.5;
   font-weight: bolder;
 }
+*/
 
 .getAuth {
   position: fixed;

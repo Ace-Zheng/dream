@@ -13,18 +13,6 @@ Page({
     searchKey: "",
 
     userInfo: '',
-    shareCardId: '', // 分享解锁的卡片id
-
-    mark0: true, // id=0的卡片
-    mark1: true, // id=1的卡片
-    mark2: true, // id=2的卡片
-    mark3: true, // id=3的卡片
-    mark4: true, // id=4的卡片
-    mark5: true, // id=5的卡片
-    mark6: true, // id=6的卡片
-    mark7: true, // id=7的卡片
-    mark8: true, // id=8的卡片
-    mark9: true, // id=9的卡片
   },
   checkData: function() {
     return "" != this.data.searchKey || (wx.showModal({
@@ -70,15 +58,6 @@ Page({
 
 
   },
-  itemLockClick: function(t) {
-    var typeId = t.currentTarget.id;
-
-    // console.log(typeId);
-    this.setData({
-      shareCardId: typeId
-    })
-
-  },
   previewImage: function() {
     wx.previewImage({
       current: "http://r.photo.store.qq.com/psb?/V14TzXDj2u5uJh/ES04HpVqWh2dOXPn5vdNkzoH*chjD2WlCw9ZektX8HM!/r/dFYAAAAAAAAA",
@@ -101,41 +80,7 @@ Page({
       userInfo: userInfo
     })
 
-    // 设置type卡片的禁止标识
-    // this.setMark(1)
-
   },
-
-  // 设置type卡片的禁止标识（type：1：页面加载刷新；2：分享卡片刷新）
-  setMark (type) {
-    const userInfo = wx.getStorageSync('userinfo')
-
-    // 只有分享过后才执行重置卡片状态.
-    if (type == 2) {
-      const str = 'mark' + this.data.shareCardId
-
-      // 执行重置卡片状态，并清空当前选中的卡片
-      this.setData({
-        [str]: true,
-        shareCardId: ''
-      })
-
-    }
-
-    if (userInfo.needShare && userInfo.needShare.length) {
-      userInfo.needShare.map((item) => {
-        const str = 'mark' + item
-
-        this.setData({
-          [str]: false
-        })
-
-      })
-
-    }
-
-  },
-
   onReady: function() {},
   onHide: function() {},
   onUnload: function() {},
@@ -187,9 +132,6 @@ Page({
           })
           wx.setStorageSync('userinfo', baseInfo)
 
-          // 设置卡片的加锁状态.
-          // that.setMark(1)
-
         }
 
       })
@@ -216,34 +158,10 @@ Page({
       // console.log(res.target)
 
       shareObj.success = function () {
-        // 区分不同card分享还是直接页面右下角分享按钮分享.
-        // const paraStr = that.data.shareCardId ? '&' + that.data.shareCardId : ''
         const para = {
           type: 2.5 // 该用户是点击分享按钮，分享分类主页
         }
         save(para) // 统计首页分享数据，存入数据库
-
-        // 点击分享解锁，分享成功后，解锁加锁的板块逻辑.
-        if (that.data.shareCardId) {
-          const shareCardId = that.data.shareCardId
-          const userinfo = wx.getStorageSync('userinfo')
-          const needShareArr = userinfo.needShare
-
-          if (needShareArr.indexOf(shareCardId) >= 0) {
-            needShareArr.splice(needShareArr.indexOf(shareCardId), 1)
-            userinfo.needShare = needShareArr
-
-            wx.setStorageSync('userinfo', userinfo)
-
-            that.setData({
-              ['userInfo.needShare']: userinfo.needShare, // 改变当前数据的needShare值
-            })
-
-            // 设置卡片的展示标识
-            // that.setMark(2)
-          }
-
-        }
 
       }
 

@@ -1,0 +1,92 @@
+<loading hidden="{{loadingMark}}" mask="true">
+    加载中...
+</loading>
+
+<view class="container-fortune">
+    <view class="section abc-flex-x-between">
+        <view class="section-left">
+          <image class="aries" mode="widthFix" src="{{src}}" style="width:{{srcWidth}};height: {{srcHeight}}"></image>
+          <view class="name-cn" style="width:{{srcWidth}}">{{xingzuo_cn}}</view>
+        </view>
+
+        <view class="section-right abc-flex-y-center" style="align-items: flex-start;">
+          <view class="tro-title">{{selectData.attr}} {{selectData.date}}</view>
+          <view class="tro-content">{{selectData.word}}</view>
+
+        </view>
+
+        <picker bindchange="bindPickerChange" range="{{xingzuos}}" value="{{index}}">
+
+          <view class="picker-container">
+            <image class="change_img" mode="widthFix" src="/images/constellation/detail_fortune/exchange.png"></image>
+            <view class="change_word">
+              切换
+            </view>
+          </view>
+
+        </picker>
+    </view>
+
+    <view class="riqi">{{nyr}}</view>
+    <view class="cs" style="width:95%;padding-left:15px;margin:0 auto;">
+        <view class="img_star" style="width:48%;margin-left:0;margin-right:0;" wx:for="{{data.ul}}" wx:key="ul">
+            <text style="color:#999;">{{item.label}}：</text>
+            <block wx:if="{{item.value<=1&&item.value>0&&index<5}}">
+                <view class="star" wx:for="{{array}}" wx:for-index="idx" wx:for-item="val" wx:key="array">
+                    <view wx:if="{{idx+1<=item.value*10/2}}">
+                        <image mode="scaleToFill" src="/images/constellation/detail_fortune/star-f71.png" style="height: 14px;width:14px;margin-top:2px;"></image>
+                    </view>
+                    <view wx:else>
+                        <image mode="scaleToFill" src="/images/constellation/detail_fortune/star-gray.png" style="height: 14px;width:14px;margin-top:2px;"></image>
+                    </view>
+                </view>
+            </block>
+            <text style="color:#555" wx:else>{{item.value}}</text>
+        </view>
+    </view>
+    <view class="dp">
+        <text style="color:#999">{{duanping_label}}</text>
+        <text style="color:#555">{{duanping_value}}</text>
+    </view>
+
+    <view class="body-view">
+        <text style="font-size:14px;color:#969a9d">{{text}}</text>
+    </view>
+
+    <view class="content">
+        <view class="detail" wx:for="{{data.cont}}" wx:key="cont">
+            <label class="detail_t">
+                <image mode="scaleToFill" src="/images/constellation/detail_fortune/star_img/ys_icon{{index+1}}.png" style="height: 24px;width:24px"></image>
+                <text class="detail_title">{{item.label}}</text>
+            </label>
+            <view class="detail_val">{{item.value}}</view>
+        </view>
+    </view>
+
+    <view class="leo-btn abc-flex-x-center">
+      <view class="abc-flex-x-center" hidden="{{fromTitleList}}">
+          <navigator class="search-all abc-img" openType="switchTab" url="/pages/home/home">
+              <image src="/images/tab/search-f71.png"></image>
+          </navigator>
+          <navigator class="look-all abc-img" openType="switchTab" url="/pages/constellation/index/index">
+              <image src="/images/tab/constellation-f71.png"></image>
+          </navigator>
+
+      </view>
+
+    </view>
+</view>
+
+<view class="category {{lateShow ? 'late-show' : ''}}">
+    <view bindtap="changeColor1" class="tab-item" style="{{color1}};">{{today}}</view>
+    <view bindtap="changeColor2" class="tab-item" style="{{color2}};">{{tomorrow}}</view>
+    <view bindtap="changeColor3" class="tab-item" style="{{color3}};">{{week}}</view>
+    <view bindtap="changeColor4" class="tab-item" style="{{color4}};">{{month}}</view>
+    <view bindtap="changeColor5" class="tab-item" style="{{color5}};">{{year}}</view>
+</view>
+
+<view class="index_share abc-flex-y-center">
+  <button class="abc-img" openType="share">
+      <image class="" src="/images/index-share.png"></image>
+  </button>
+</view>

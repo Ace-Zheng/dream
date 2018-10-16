@@ -1,7 +1,7 @@
 <view style="padding:25rpx;margin-left:25rpx;margin-right:25rpx;">
     <view wx:for="{{dataList}}" wx:key="key">
         <navigator url="../detail/detail?id={{item.id || ''}}&title={{item.title || ''}}">
-            <view class="li">{{item.title || ''}}</view>
+            <view class="li abc-ellipsis-single">{{item.title || ''}}</view>
         </navigator>
     </view>
 </view>

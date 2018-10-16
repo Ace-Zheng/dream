@@ -1,6 +1,8 @@
 // var n = require("../../../utils/titleData.js");
 import { requestApi } from '../../../api'
 
+
+var app = getApp();
 Page({
   data: {
     // index: null,
@@ -8,6 +10,8 @@ Page({
     dataList: '', // 列表数据
   },
   onLoad: function(t) {
+    app.showLoading()
+
     this.get_list(t);
   },
   onReady: function() {},
@@ -19,7 +23,7 @@ Page({
 
   get_list (t) {
     var a = "", n = "", e = "";
-    "character" == t.type ? (a = 21, n = 12, e = "星座性格") : (a = 22, n = 50, e = "星座排行")
+    "character" == t.type ? (a = 21, n = 12, e = "星座性格") : (a = 22, n = 20, e = "星座排行")
 
       wx.setNavigationBarTitle({
         title: e
@@ -35,13 +39,13 @@ Page({
       count: n,
     }
 
-    getApp().ajax({
+    app.ajax({
       url: url,
       type: 'get',
       para: params,
       login: false,
       success: function (t) {
-        console.log(t)
+        // console.log(t)
 
         wx.setStorageSync("list", t.original.data);
         that.setData({
@@ -52,7 +56,9 @@ Page({
       fail: function (error) {
         console.log(error)
       },
-      complete: function () {}
+      complete: function () {
+        app.hideLoading()
+      }
 
     })
 
@@ -102,11 +108,6 @@ Page({
 
 
   onShareAppMessage: function() {
-    return {
-      title: "想知道你的梦境预示着什么吗？答案在这里！",
-      desc: "想知道你的梦境预示着什么吗？答案在这里！",
-      imageUrl: "../../images/share-outimg.jpeg",
-      path: "/pages/home/home"
-    };
+    return t.getShareText('星座')
   }
 });

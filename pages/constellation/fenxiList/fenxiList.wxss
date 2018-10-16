@@ -7,6 +7,6 @@ page {
     padding-left: 10rpx;
     border-top: 1px solid rgba(255, 255, 255, 0.51);
     text-align: -webkit-match-parent;
-    font-size: 25rpx;
+    font-size: 30rpx;
     font-weight: bold;
 }

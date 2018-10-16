@@ -1,5 +1,6 @@
 var t = require("../../utils/groupData.js");
 // 引入接口地址文件
+import { resolveSearch } from './computed/index'
 import { requestApi } from '../../api'
 import { save } from '../../utils/dataCount'
 
@@ -12,7 +13,8 @@ Page({
     searchKey: "",
 
     searchCss: false,
-    userInfo: ''
+    userInfo: '',
+    inputShow: false, // input输入框的显示标识
   },
   checkData: function() {
     return "" != this.data.searchKey || (wx.showModal({
@@ -24,13 +26,28 @@ Page({
   },
   searchTap: function() {
     if (this.checkData()) {
-      var t = this.data.searchKey, e = t.indexOf("梦到了");
-      -1 != e && (t = t.substr(e + 3));
-      var n = t.indexOf("梦到");
-      -1 != n && (t = t.substr(n + 2)), wx.navigateTo({
-        url: "../detail/detail?key=" + t
-      });
 
+      // check输入关键字是否为星座保留字.
+      const xingzuoMark = resolveSearch(this.data.searchKey)
+
+      // 解析星座还是解梦
+      if (xingzuoMark.mark) {
+        const xingzuoEn = xingzuoMark.xingzuo_en || ''
+
+        // 跳转星座详情页.
+        wx.navigateTo({
+          url: '/pages/constellation/detail_fortune/index?type='+xingzuoEn+''
+        })
+
+      } else {
+        var t = this.data.searchKey, e = t.indexOf("梦到了");
+        -1 != e && (t = t.substr(e + 3));
+        var n = t.indexOf("梦到");
+        -1 != n && (t = t.substr(n + 2)), wx.navigateTo({
+          url: "../detail/detail?key=" + t
+        });
+
+      }
 
       this.setData({
         searchKey: ''
@@ -78,7 +95,8 @@ Page({
     }
 
     this.setData({
-      searchCss: !this.data.searchCss
+      searchCss: !this.data.searchCss,
+      inputShow: true
     })
 
   },
@@ -86,10 +104,18 @@ Page({
     // console.log(123)
 
     this.setData({
-      searchCss: false
+      searchCss: false,
+    })
+
+    // 动画结束后，input隐藏.
+    setTimeout(() => {
+      this.setData({
+        inputShow: false
+      })
     })
 
   },
+
   // 登录相关
   bindGetUserInfo(e) {
     console.log(e.detail.userInfo)

@@ -26,7 +26,7 @@ page {
     padding:0 30rpx;
     line-height:1.5;
     margin-top:40rpx;
-    font-size:14px;
+    font-size:15px;
 }
 
 .fail-body {
@@ -38,9 +38,7 @@ page {
     line-height: 90rpx;
 }
 
-.leo-btn {
-
-}
+.leo-btn {}
 .leo-btn .search-all {
   width: 20rpx;
   height: 20rpx;

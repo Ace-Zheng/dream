@@ -19,29 +19,17 @@
 
           <image src="https://tpdoc.cn/uploads/dream/guishen.png"></image>
 
-          <button wx:if="{{!mark2}}" bindtap="itemLockClick" id="2" class="cover abc-flex-x-center" openType="share">
-            <image class="lock" src="/images/lock.png"></image>
-            <image class="text" src="/images/share-text.png"></image>
-          </button>
         </navigator>
 
         <view class="guishen-par abc-flex-y-between">
           <navigator bindtap="itemClick" id="4" url="/pages/titlelist/titlelist?index=0&title={{groupData[4]}}" class="imagePar">
             <image src="https://tpdoc.cn/uploads/dream/dongwu.png"></image>
 
-            <button wx:if="{{!mark4}}" bindtap="itemLockClick" id="4" class="cover abc-flex-x-center" openType="share">
-              <image class="lock" src="/images/lock.png"></image>
-              <image class="text" src="/images/share-text.png"></image>
-            </button>
           </navigator>
 
           <navigator bindtap="itemClick" id="3" url="/pages/titlelist/titlelist?index=0&title={{groupData[3]}}" class="imagePar">
             <image src="https://tpdoc.cn/uploads/dream/zhiwu.png"></image>
 
-            <button wx:if="{{!mark3}}" bindtap="itemLockClick" id="3" class="cover abc-flex-x-center" openType="share">
-              <image class="lock" src="/images/lock.png"></image>
-              <image class="text" src="/images/share-text.png"></image>
-            </button>
           </navigator>
         </view>
       </view>
@@ -50,18 +38,10 @@
         <navigator bindtap="itemClick" id="5" url="/pages/titlelist/titlelist?index=0&title={{groupData[5]}}" class="imagePar">
             <image src="https://tpdoc.cn/uploads/dream/shenti.png"></image>
 
-            <button wx:if="{{!mark5}}" bindtap="itemLockClick" id="5" class="cover abc-flex-x-center" openType="share">
-              <image class="lock" src="/images/lock.png"></image>
-              <image class="text" src="/images/share-text.png"></image>
-            </button>
         </navigator>
         <navigator bindtap="itemClick" id="6" url="/pages/titlelist/titlelist?index=0&title={{groupData[6]}}" class="imagePar">
           <image src="https://tpdoc.cn/uploads/dream/wupin.png"></image>
 
-          <button wx:if="{{!mark6}}" bindtap="itemLockClick" id="6" class="cover abc-flex-x-center" openType="share">
-            <image class="lock" src="/images/lock.png"></image>
-            <image class="text" src="/images/share-text.png"></image>
-          </button>
         </navigator>
 
       </view>
@@ -71,32 +51,16 @@
           <navigator bindtap="itemClick" id="8" url="/pages/titlelist/titlelist?index=0&title={{groupData[8]}}" class="imagePar abc-img">
             <image src="https://tpdoc.cn/uploads/dream/shenghuo.png"></image>
 
-            <button wx:if="{{!mark8}}" bindtap="itemLockClick" id="8" class="cover abc-flex-x-center" openType="share">
-              <image class="lock" src="/images/lock.png"></image>
-              <image class="text" src="/images/share-text.png"></image>
-            </button>
           </navigator>
 
           <navigator bindtap="itemClick" id="9" url="/pages/titlelist/titlelist?index=0&title={{groupData[9]}}" class="imagePar abc-img">
             <image src="https://tpdoc.cn/uploads/dream/renwu.png"></image>
 
-            <button wx:if="{{!mark9}}" bindtap="itemLockClick" id="9" class="cover abc-flex-x-center" openType="share">
-              <image class="lock" src="/images/lock.png"></image>
-              <image class="text" src="/images/share-text.png"></image>
-            </button>
           </navigator>
         </view>
 
         <navigator bindtap="itemClick" id="7" url="/pages/titlelist/titlelist?index=0&title={{groupData[7]}}" class="qingai imagePar abc-img">
           <image src="https://tpdoc.cn/uploads/dream/qingai.png"></image>
-
-          <button wx:if="{{!mark7}}" bindtap="itemLockClick" id="7"
-            class="cover abc-flex-x-center" openType="share">
-
-            <image class="lock" src="/images/lock.png"></image>
-            <image class="text" src="/images/share-text.png"></image>
-
-          </button>
 
         </navigator>
       </view>

@@ -1,16 +1,13 @@
 {
     "pages": [
-        "pages/constellation/index/index",
-
         "pages/home/home",
         "pages/index/index",
         "pages/detail/detail",
         "pages/titlelist/titlelist",
+        "pages/constellation/index/index",
+        "pages/constellation/detail_fortune/index",
         "pages/constellation/fenxiList/fenxiList",
         "pages/constellation/detail/detail"
-
-
-
     ],
     "window": {
         "backgroundTextStyle": "light",

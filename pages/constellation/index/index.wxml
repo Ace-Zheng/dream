@@ -1,6 +1,8 @@
+
+<button wx:if="{{!userInfo || !userInfo.nickName}}" class="getAuth" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
 <view class="fortune_box bg5">
     <view class="fortune">
-        <navigator class="li" hoverClass="none" mode="widthFix" url="/pages/fortune_info/fortune_info?id={{index+1}}" wx:for="{{list}}" wx:key="index">
+        <navigator class="li" hoverClass="none" mode="widthFix" url="/pages/constellation/detail_fortune/index?type={{item.en}}" wx:for="{{list}}" wx:key="index">
             <image class="li_img" src="{{item.imgUrl}}" style="width:{{item.imgWidth}};height:{{item.imgHeight}}"></image>
             <view class="name">{{item.name}}</view>
             <view class="date">{{item.date}}</view>
@@ -8,19 +10,56 @@
     </view>
 
 
-    <navigator class="xingzuo-compute abc-flex-x-between" url="/pages/fortune_info/fortune_info">
+    <navigator style="display:none;" class="xingzuo-compute abc-flex-x-between" url="/pages/fortune_info/fortune_info">
       <view class="title">星座测算</view>
       <image class="more" src="/images/constellation/index/more.png"></image>
 
       <image class="new" src="https://tpdoc.cn/uploads/dream/xingzuo/index/new.png"></image>
     </navigator>
 
-    <navigator class="xingzuo-fenxi xingzuo-fenxi-1 abc-flex-y-end" url="/pages/constellation/fenxiList/fenxiList?type=character">
-      <view class="title">十二星座性格解析</view>
-    </navigator>
+    <view class="project abc-flex-y-start">
+      <view class="title abc-flex-x-center">
+        <view><view class="line"></view></view>
+        <view class="title-name">热门专题</view>
+        <view><view class="line"></view></view>
+      </view>
 
-    <navigator class="xingzuo-fenxi xingzuo-fenxi-2 abc-flex-y-end" url="/pages/constellation/fenxiList/fenxiList?type=depth">
-      <view class="title">十二星座深度分析</view>
-    </navigator>
+      <view class="project-content abc-flex-x-center">
+        <navigator class="xingzuo-fenxi xingzuo-fenxi-1 abc-flex-y-start" url="/pages/constellation/fenxiList/fenxiList?type=character">
+          <view class="title">十二星座-性格分析</view>
 
+          <view class="img abc-img">
+            <image src="https://tpdoc.cn/uploads/dream/xingzuo/index/fenxi-1.png"></image>
+          </view>
+
+          <view>
+            《水瓶座》<br/>《双子座》<br/>...
+          </view>
+
+        </navigator>
+
+        <navigator class="xingzuo-fenxi xingzuo-fenxi-2 abc-flex-y-start" url="/pages/constellation/fenxiList/fenxiList?type=depth">
+          <image class="new" src="https://tpdoc.cn/uploads/dream/xingzuo/index/new.png"></image>
+
+          <view class="title">十二星座-深度解析</view>
+
+          <view class="img abc-img">
+            <image src="https://tpdoc.cn/uploads/dream/xingzuo/index/fenxi-2.png"></image>
+          </view>
+
+          <view>
+            《哪个星座的人际关系...
+          </view>
+
+        </navigator>
+      </view>
+
+    </view>
+
+</view>
+
+<view class="index_share abc-flex-y-center">
+  <button class="abc-img" openType="share">
+      <image class="" src="/images/index-share.png"></image>
+  </button>
 </view>

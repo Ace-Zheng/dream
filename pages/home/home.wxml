@@ -3,7 +3,12 @@
 <view bindtap="backCss" class="page">
 
     <view catchtap="javascript:;" class="container">
-      <input bindinput="changeSearchKey" placeholder-class="phcolor" value="{{searchKey}}" class="{{searchCss ? 'selected' : ''}}" type="text" placeholder="你梦见了..."></input>
+
+      <view class="input-par {{searchCss ? 'selected' : ''}}">
+        <input bindinput="changeSearchKey" placeholder-class="phcolor" value="{{searchKey}}" class="{{searchCss ? 'selected' : ''}}"
+          type="text" placeholder="您的梦境or星座..."></input>
+      </view>
+
       <view catchtap="searchClick" class="search {{searchCss ? 'selected' : ''}}"></view>
 
     </view>
