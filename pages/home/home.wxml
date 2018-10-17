@@ -5,7 +5,7 @@
     <view catchtap="javascript:;" class="container">
 
       <view class="input-par {{searchCss ? 'selected' : ''}}">
-        <input bindinput="changeSearchKey" placeholder-class="phcolor" value="{{searchKey}}" class="{{searchCss ? 'selected' : ''}}"
+        <input wx:if="{{inputShow}}" bindinput="changeSearchKey" placeholder-class="phcolor" value="{{searchKey}}" class="{{searchCss ? 'selected' : ''}}"
           type="text" placeholder="您的梦境or星座..."></input>
       </view>
 

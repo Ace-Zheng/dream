@@ -90,16 +90,23 @@ Page({
   onReachBottom: function() {},
 
   searchClick () {
+    // 判断当前搜索框状态，分别执行打开搜索框和搜索内容两项功能
     if (this.data.searchCss) {
       this.searchTap()
+
+      // 关闭搜索框动效
+      this.backCss()
+
+    } else {
+      this.setData({
+        searchCss: !this.data.searchCss,
+        inputShow: true
+      })
+
     }
 
-    this.setData({
-      searchCss: !this.data.searchCss,
-      inputShow: true
-    })
-
   },
+  // 关闭搜索框动效
   backCss () {
     // console.log(123)
 
@@ -112,7 +119,7 @@ Page({
       this.setData({
         inputShow: false
       })
-    })
+    }, 500)
 
   },
 
